@@ -15,6 +15,96 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="Für Bau- und Handwerksbetriebe: Ihre Kunden- und Lieferantenliste täglich mit den Insolvenzbekanntmachungen abgeglichen, Meldung am selben Tag.">
 <link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
+<style>
+/* Variant: current kit + Impeccable polish. Same look as the shared base, finished: measure, rhythm, states. */
+:root{--measure:68ch;--focus:#006acf;--header-h:64px}
+html{scroll-padding-top:calc(var(--header-h) + 16px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{font-size:16px;line-height:1.5}
+::selection{background:#d6efff;color:#05080b}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
+a.cta:focus-visible,.btn:focus-visible{border-radius:999px}
+select:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* type scale — self-sufficient, matches the kit's values */
+h1{font-size:60px;line-height:1.1;letter-spacing:-.025em;text-wrap:balance;max-width:21ch}
+h2{font-size:40px;line-height:1.15;letter-spacing:-.025em;text-wrap:balance;margin:0 0 28px}
+h3{font-size:20px;line-height:1.4;letter-spacing:-.01em;text-wrap:balance}
+p{text-wrap:pretty}
+.sub{font-size:20px;line-height:1.6;max-width:60ch}
+.logo{font-size:17px}
+nav.top a{font-size:15px;padding:6px 2px;border-radius:6px}
+nav.top a:hover{color:#006acf}
+
+/* header and hero */
+.hero{padding:80px 0 56px}
+.hero .sub{margin-bottom:32px}
+.cta-note{font-size:14px;margin-top:12px}
+a.cta{transition:opacity .15s cubic-bezier(.4,0,.2,1),transform .15s cubic-bezier(.2,.8,.2,1)}
+a.cta:active,.btn:active{transform:translateY(1px)}
+a.cta:hover{opacity:.92}
+
+/* sections: steady rhythm */
+section{padding:80px 0}
+
+/* feature cards: balanced 2x2 instead of 3+1, buttons on one baseline */
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{gap:8px}
+.card > b{font-size:20px;line-height:1.4;letter-spacing:-.01em;margin:0}
+.card span{font-size:16px;line-height:1.5;max-width:42ch}
+.card .btn{margin-top:auto;font-size:14px;transition:background-color .15s cubic-bezier(.4,0,.2,1),border-color .15s cubic-bezier(.4,0,.2,1),transform .15s cubic-bezier(.2,.8,.2,1)}
+.card{padding:28px 28px 24px}
+.card > span{margin-bottom:16px}
+.btn:hover{border-color:#c5c9cf}
+
+/* example: the story reads at body size inside a kit card */
+.example{background:#fff;border:1px solid #dfe1e5;border-radius:21.6px;padding:28px;max-width:calc(var(--measure) + 56px);margin:0 0 28px}
+.example p{margin:0;font-size:17px;line-height:1.6;color:#05080b}
+
+/* long-form text and FAQ: readable measure, more space above headings than below */
+#opis > p,#faq > p,#faq > h3{max-width:var(--measure)}
+#opis > p{margin:0 0 18px;font-size:17px;line-height:1.65;color:#2a3139}
+#opis > p:last-child{margin-bottom:0}
+#faq > h3{margin:0;padding-top:24px;border-top:1px solid #dfe1e5}
+#faq > h2 + h3{border-top:0;padding-top:0}
+#faq > p{margin:8px 0 24px;color:#5c646f;font-size:16px;line-height:1.6}
+#faq > p:last-child{margin-bottom:0}
+
+/* start: label, select and button as one aligned field row */
+.start-form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 16px}
+.field{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:500;color:#05080b}
+.field select{font-size:16px;line-height:24px;padding:15px 44px 15px 16px;min-width:280px;min-height:56px;border-radius:12px;appearance:none;-webkit-appearance:none;cursor:pointer;
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%235c646f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
+  transition:border-color .15s cubic-bezier(.4,0,.2,1)}
+.field select:hover{border-color:#c5c9cf}
+.start-form a.cta{margin:0}
+
+footer{padding:32px 0}
+footer p{margin:0}
+footer a{text-underline-offset:3px}
+
+@media (max-width:760px){
+  h1{font-size:36px;line-height:1.15;max-width:none}
+  h2{font-size:30px;margin-bottom:24px}
+  .sub{font-size:18px;line-height:1.55}
+  .hero{padding:48px 0 40px}
+  section{padding:56px 0}
+  .grid{grid-template-columns:1fr;gap:16px}
+  .card{padding:24px}
+  .example{padding:22px}
+  .example p,#opis > p{font-size:16px}
+  .start-form{flex-direction:column;align-items:stretch}
+  .field select{min-width:0;width:100%}
+  .start-form a.cta{display:block;text-align:center}
+}
+@media (max-width:480px){
+  h1,h2{hyphens:auto;-webkit-hyphens:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  a.cta,.btn,.field select{transition:none}
+  a.cta:active,.btn:active{transform:none}
+}
+</style>
 <script src="smoke.js" defer></script>
 <!-- faq-jsonld:start -->
 <script type="application/ld+json">
@@ -89,16 +179,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section id="was" data-view="features_view">
     <h2>Was Sie bekommen</h2>
     <div class="grid">
-      <div class="card"><b>Ihre Watchlist</b><span>Kunden, Auftraggeber und Lieferanten mit Name, Sitz und Registernummer.</span><br><a class="btn" href="price.html" data-ev="feature_liste">Das brauche ich</a></div>
-      <div class="card"><b>Täglicher Abgleich</b><span>Abgleich mit den öffentlichen Insolvenzbekanntmachungen, jeden Tag.</span><br><a class="btn" href="price.html" data-ev="feature_abgleich">Das brauche ich</a></div>
-      <div class="card"><b>Meldung am selben Tag</b><span>E-Mail mit Gericht, Aktenzeichen, Datum und Art der Bekanntmachung.</span><br><a class="btn" href="price.html" data-ev="feature_meldung">Das brauche ich</a></div>
-      <div class="card"><b>Verlauf je Firma</b><span>Alle Bekanntmachungen zu einer Firma an einem Ort, vom Eröffnungsbeschluss bis zur Aufhebung.</span><br><a class="btn" href="price.html" data-ev="feature_verlauf">Das brauche ich</a></div>
+      <div class="card"><b>Ihre Watchlist</b><span>Kunden, Auftraggeber und Lieferanten mit Name, Sitz und Registernummer.</span><a class="btn" href="price.html" data-ev="feature_liste">Das brauche ich</a></div>
+      <div class="card"><b>Täglicher Abgleich</b><span>Abgleich mit den öffentlichen Insolvenzbekanntmachungen, jeden Tag.</span><a class="btn" href="price.html" data-ev="feature_abgleich">Das brauche ich</a></div>
+      <div class="card"><b>Meldung am selben Tag</b><span>E-Mail mit Gericht, Aktenzeichen, Datum und Art der Bekanntmachung.</span><a class="btn" href="price.html" data-ev="feature_meldung">Das brauche ich</a></div>
+      <div class="card"><b>Verlauf je Firma</b><span>Alle Bekanntmachungen zu einer Firma an einem Ort, vom Eröffnungsbeschluss bis zur Aufhebung.</span><a class="btn" href="price.html" data-ev="feature_verlauf">Das brauche ich</a></div>
     </div>
   </section>
 
   <section id="beispiel" data-view="example_view">
     <h2>Beispiel (fiktive Daten)</h2>
-    <p class="fine">Elektrobetrieb mit 40 Auftraggebern, darunter drei Bauträger. Am Dienstag erscheint ein Bauträger in den Insolvenzbekanntmachungen. Die E-Mail kommt am selben Vormittag mit Gericht und Aktenzeichen; der Betrieb stoppt die nächste Lieferung und meldet seine offene Forderung rechtzeitig an.</p>
+    <div class="example"><p>Elektrobetrieb mit 40 Auftraggebern, darunter drei Bauträger. Am Dienstag erscheint ein Bauträger in den Insolvenzbekanntmachungen. Die E-Mail kommt am selben Vormittag mit Gericht und Aktenzeichen; der Betrieb stoppt die nächste Lieferung und meldet seine offene Forderung rechtzeitig an.</p></div>
     <a class="cta" href="price.html" data-ev="click_cta_after_example">Paket wählen</a>
   </section>
 <!-- seo-tekst:start -->
@@ -133,8 +223,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- seo-tekst:end -->
   <section id="start" data-view="start_view">
     <h2>Legen Sie Ihre Watchlist an</h2>
-    <p><label>Firmen auf Ihrer Liste<br><select data-ev-focus="form_start" style="margin-top:6px;padding:8px;font-size:16px"><option value="">— bitte wählen —</option><option>Bis 10</option><option>10–50</option><option>50–200</option><option>Mehr als 200</option></select></label></p>
-    <a class="cta" href="price.html" data-ev="form_submit_click">Starten</a>
+    <div class="start-form">
+      <label class="field">Firmen auf Ihrer Liste<select data-ev-focus="form_start"><option value="">— bitte wählen —</option><option>Bis 10</option><option>10–50</option><option>50–200</option><option>Mehr als 200</option></select></label>
+      <a class="cta" href="price.html" data-ev="form_submit_click">Starten</a>
+    </div>
   </section>
 </div>
 
