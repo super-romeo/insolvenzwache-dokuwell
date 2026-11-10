@@ -15,13 +15,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="Für Bau- und Handwerksbetriebe: Ihre Kunden- und Lieferantenliste täglich mit den Insolvenzbekanntmachungen abgeglichen, Meldung am selben Tag.">
 <link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
 <style>
 /* Variant: current kit + Impeccable polish. Same look as the shared base, finished: measure, rhythm, states. */
-:root{--measure:68ch;--focus:#006acf;--header-h:64px}
+:root{--measure:68ch;--focus:#0086dd;--header-h:64px;
+  --bg:#fcfcfc;--ink:#05080b;--muted:#5c646f;--line:#dfe1e5;--card:#ffffff;--alt:#f7f8f9;
+  --accent:#006acf;--accent-soft:#d6efff;--accent-num:#b1ddff;--navy:#05080b;
+  --font:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{background:var(--bg);color:var(--ink);font-family:var(--font)}
+nav.top a{color:var(--muted)}
+footer{background:var(--alt);color:var(--ink);border-top:1px solid var(--line)}
+footer a{color:var(--accent)}
+footer .muted{color:var(--muted)}
 html{scroll-padding-top:calc(var(--header-h) + 16px)}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{font-size:16px;line-height:1.5}
-::selection{background:#d6efff;color:#05080b}
+::selection{background:var(--accent-soft);color:var(--ink)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
 a.cta:focus-visible,.btn:focus-visible{border-radius:999px}
 select:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
@@ -34,7 +45,7 @@ p{text-wrap:pretty}
 .sub{font-size:20px;line-height:1.6;max-width:60ch}
 .logo{font-size:17px}
 nav.top a{font-size:15px;padding:6px 2px;border-radius:6px}
-nav.top a:hover{color:#006acf}
+nav.top a:hover{color:var(--accent)}
 
 /* header and hero */
 .hero{padding:80px 0 56px}
@@ -55,28 +66,28 @@ section{padding:80px 0}
 .card .btn{margin-top:auto;font-size:14px;transition:background-color .15s cubic-bezier(.4,0,.2,1),border-color .15s cubic-bezier(.4,0,.2,1),transform .15s cubic-bezier(.2,.8,.2,1)}
 .card{padding:28px 28px 24px}
 .card > span{margin-bottom:16px}
-.btn:hover{border-color:#c5c9cf}
+.btn:hover{border-color:var(--muted)}
 
 /* example: the story reads at body size inside a kit card */
-.example{background:#fff;border:1px solid #dfe1e5;border-radius:21.6px;padding:28px;max-width:calc(var(--measure) + 56px);margin:0 0 28px}
-.example p{margin:0;font-size:17px;line-height:1.6;color:#05080b}
+.example{background:var(--card);border:1px solid var(--line);border-radius:21.6px;padding:28px;max-width:calc(var(--measure) + 56px);margin:0 0 28px}
+.example p{margin:0;font-size:17px;line-height:1.6;color:var(--ink)}
 
 /* long-form text and FAQ: readable measure, more space above headings than below */
 #opis > p,#faq > p,#faq > h3{max-width:var(--measure)}
-#opis > p{margin:0 0 18px;font-size:17px;line-height:1.65;color:#2a3139}
+#opis > p{margin:0 0 18px;font-size:17px;line-height:1.65;color:var(--ink)}
 #opis > p:last-child{margin-bottom:0}
-#faq > h3{margin:0;padding-top:24px;border-top:1px solid #dfe1e5}
+#faq > h3{margin:0;padding-top:24px;border-top:1px solid var(--line)}
 #faq > h2 + h3{border-top:0;padding-top:0}
-#faq > p{margin:8px 0 24px;color:#5c646f;font-size:16px;line-height:1.6}
+#faq > p{margin:8px 0 24px;color:var(--muted);font-size:16px;line-height:1.6}
 #faq > p:last-child{margin-bottom:0}
 
 /* start: label, select and button as one aligned field row */
 .start-form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 16px}
-.field{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:500;color:#05080b}
+.field{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:500;color:var(--ink)}
 .field select{font-size:16px;line-height:24px;padding:15px 44px 15px 16px;min-width:280px;min-height:56px;border-radius:12px;appearance:none;-webkit-appearance:none;cursor:pointer;
-  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%235c646f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
+  background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%235c646f' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
   transition:border-color .15s cubic-bezier(.4,0,.2,1)}
-.field select:hover{border-color:#c5c9cf}
+.field select:hover{border-color:var(--muted)}
 .start-form a.cta{margin:0}
 
 footer{padding:32px 0}
